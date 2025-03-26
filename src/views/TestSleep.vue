@@ -1,6 +1,7 @@
 <script setup>
 import CheckboxMultiDropdown from "../components/TestSleep/CheckboxMultiDropdown.vue";
 import { reactive } from "vue";
+import TestDirectionDropdownList from "../components/TestDirectionDropdownList/index.vue";
 const setting = {
   list: [
     {
@@ -49,11 +50,16 @@ const data = reactive({
 <template>
   <div :class="['p-[10px]']">
     <h2 :class="['text-[20px] font-bold', 'mb-[10px]']">TestSleep</h2>
-    <CheckboxMultiDropdown
-      v-model="data.sleep.day"
-      :item="setting"
-      :class="['mb-[10px]']"
-    />
-    {{ data }}
+    <div>
+      <CheckboxMultiDropdown
+        v-model="data.sleep.day"
+        :item="setting"
+        :class="['mb-[10px]']"
+      />
+      {{ data }}
+    </div>
+    <div>
+      <TestDirectionDropdownList />
+    </div>
   </div>
 </template>
